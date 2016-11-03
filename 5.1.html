@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"> <head>
+    <body>
+	<script>
+	 var aref = [0, 1, 2];
+	 var aref2 = aref;
+	 aref[0] = 999;
+	 //alert(aref2);
+	 
+	 document.write("<br />");
+	 var myString = "Welcome to Wrox books. " +
+			"The Wrox website is www.wrox.com. " +
+			"Visit the Wrox website today. Thanks for buying Wrox";
+	 
+	 var wroxCount = 0, i = myString.indexOf("Wrox");
+	 while (i != -1) {
+	     document.write("***", "<br />");
+	     ++wroxCount;
+	     i = myString.indexOf("Wrox", i+1);
+	 }
+	 
+	 
+	 document.write("There are " + wroxCount + " occurrences of the word Wrox");
+	 
+	</script>
+    </body>
+</html>

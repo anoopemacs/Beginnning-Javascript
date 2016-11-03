@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>title</title>
+	<style>
+	 [data-drop-target] {
+	     height: 400px;
+	     width: 200px;
+	     margin: 2px;
+	     background-color: gainsboro;
+	     float: left;
+	     /* 	     border: dotted; */
+	 }
+	 .drag-enter {
+	     border: 2px dashed #000;
+	 }
+	 .box {
+	     width: 200px;
+	     height: 200px;
+	 }
+	 .navy {
+	     background-color: navy;
+	 }
+	 .red {
+	     background-color: red;
+	 }
+	</style>
+    </head>
+    <body>
+	<div data-drop-target="true" id="anoop1">
+	    <div id="box1" draggable="true" class="box navy"></div>
+	    <div id="box2" draggable="true" class="box red"></div>
+	</div>
+
+	<div data-drop-target="true" id="anoop2"></div>
+
+	<script>
+	 function handleDragStart(e) {
+	     // e holds the target, ie the thing that called this function due to some event on that thing
+	     //console.log(["drag started & e = ", e]);
+
+	     /* 	     console.log(this); */
+
+	     var data = {
+		 elementId: this.id,
+		 message1: "message1 = You moved an element!",
+		 message2: "message2 = You moved an element!",
+		 message3: "message3 = You moved an element!"
+	     };
+	     e.dataTransfer.setData("text", JSON.stringify(data));
+	     
+	     /* console.log(["e.dataTransfer.getData of text", e.dataTransfer.getData("text")]);
+		console.log(["this.id = "], this.id); */
+	 }
+	 function handleDragEnterLeave(e) {
+	     //function for drag enter or drag leave
+	     if (e.type == "dragenter") {
+		 this.className = "drag-enter";
+	     } else {
+		 console.log(["else for drag leave, e.type = ", e.type]);
+		 this.className = "";
+	     }
+	 }
+	 function handleOverDrop(e) {
+	     e.preventDefault();
+	     if (e.type != "drop") {
+		 return;
+		 // if e.type == dragover, function execution ends here
+	     }
+
+	     var json = e.dataTransfer.getData("text");
+	     var data = JSON.parse(json);
+	     var draggedEl = document.getElementById(data.elementId);
+	     
+	     /* console.log(["id of this in handleOverDrop = ", this.id]);
+		console.log(["id of draggedEl in handleOverDrop = ", draggedEl.id]);
+		console.log(["id of draggedEl.parentNode.id in handleOverDrop = ", draggedEl.parentElement.id]); */
+	     
+	     if (draggedEl.parentNode == this) {
+		 console.log("This happens when dragged and dropped back on the same container");
+		 return;
+	     }
+	     draggedEl.parentNode.removeChild(draggedEl);
+	     this.appendChild(draggedEl);
+	     //	     console.log(["this", this]);
+	     //	     console.log(this.className);
+
+	     // remove the border styling due to drag-enter class
+	     this.className = "";
+
+	     /* 	     console.log(data); */
+	     var index = Math.floor(Math.random() * 3);
+	     /* 	     console.log(["index = ", index]); */
+	     //alert a random selected message
+	     var arrayOfMessages = [data.message1, data.message2, data.message3];
+	     alert(arrayOfMessages[index]);
+	 }
+
+	 var draggable = document.querySelectorAll("[draggable]");
+	 var targets = document.querySelectorAll("[data-drop-target]");
+
+	 for (var i = 0; i != draggable.length; ++i) {
+	     draggable[i].addEventListener("dragstart", handleDragStart);
+	 }
+
+	 for (var i = 0; i != targets.length; ++i) {
+	     targets[i].addEventListener("dragover", handleOverDrop);
+	     targets[i].addEventListener("drop", handleOverDrop);
+	     targets[i].addEventListener("dragenter", handleDragEnterLeave);
+	     targets[i].addEventListener("dragleave", handleDragEnterLeave);
+	 }
+	</script>
+    </body>
+</html>

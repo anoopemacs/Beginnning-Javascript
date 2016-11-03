@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>Title</title>
+    </head>
+    <body>
+	<script>
+	 var numbers = [ 1, 2, 3, 4, 5 ];
+	 /*
+	 for (var i = 0; i < numbers.length; i++) {
+	     var result = numbers[i] * 2; alert(result);
+	 } */
+	 /*
+	 function doubleAndAlert (value, index, array) {
+	     var result = 2*value;
+	     alert(result);
+	 } */
+
+	 function doubleAndReturn (value, index, array) {
+	     return value * 2;
+	 }
+	 //numbers.forEach(doubleAndAlert);
+	 /*
+	 var ret = numbers.map(doubleAndReturn);
+	 console.log(ret);
+	 */
+	 /* 
+	    var num = -101;
+	    document.write(Math.abs(num)); */
+
+	 /* var r = Math.max(1,2,3,4,5,4.3,4.8,5.5,2.1,7,0);
+	    document.write(r);
+	  */
+	 //r2 doesnt work because Math.min accepts multiple arguments
+	 /* var r2 = numbers.reduce(Math.min);
+	    document.write(r2);
+
+	    var r3 =
+	    [1,2,3,4,5].reduce(function(preValue, currValue, currIndex, array) {
+	    return preValue + currValue;
+	    });
+	    console.log("r3 = ", r3);
+
+	    var r4 = [ 1, 2, 3, 4, 5 ].reduce(function(a,b){return a>b?a:b});
+	    console.log("r4 = ", r4); */
+	 
+	</script>
+    </body>
+</html>

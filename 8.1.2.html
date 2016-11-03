@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>title</title>
+    </head>
+    <body>
+	<script>
+
+	 function geoSuccess(position) {
+	     var coords = position.coords;
+	     var latitude = coords.latitude;
+	     var longitude = coords.longitude;
+	     var message = "You're at " + latitude + ", " + longitude;
+	     alert(message);
+	 }
+	 function geoError(errorObj) {
+	     console.log(errorObj);
+	     alert(errorObj.message);
+	 }
+	 navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+	 console.log(screen.colorDepth);
+	</script>
+    </body>
+</html>

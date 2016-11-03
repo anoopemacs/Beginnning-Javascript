@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>title</title>
+    </head>
+    <body>
+	<p>click on the images to load another image.</p>
+	<img alt="USA" name="myImage" src="giphy1.gif" width="200" height="150" onclick="changeImg(event, this)"/>
+	<img alt="other" name="myImage" src="giphy2.gif" width="200" height="150" onclick="changeImg(event, this)"/>
+	<script>
+	 var myImages = [
+	     "giphy1.gif",
+	     "giphy2.gif",
+	     "giphy3.gif",
+	     "giphy4.gif",
+	     "giphy5.gif",
+	 ];
+	 
+	 function changeImg(e, that) {
+	     var el = e.target;
+	     console.log("e", e);
+	     console.log("el", el);
+	     console.log("that == target", that == el);
+
+	     // [0, 5)
+	     var newImgNumber = Math.floor(Math.random() * 5);
+	     var newImg = myImages[newImgNumber];
+
+	     //to avoid same image reload
+	     while (el.src.indexOf(newImg) != -1) {
+		 newImgNumber = Math.floor(Math.random() * 5);
+		 newImg = myImages[newImgNumber];
+	     }
+	     el.src = newImg;
+	     
+	 }
+	 
+	</script>
+    </body>
+</html>

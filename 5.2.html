@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>Title</title>
+    </head>
+    <body>
+	<script>
+	 //check the type of character at the start of a given string
+	 function checkCharType(charToCheck) {
+	     var returnValue = "O";
+	     var charCode = charToCheck.charCodeAt(0);
+
+	     if (charCode >= "A".charCodeAt(0) && charCode <= "Z".charCodeAt(0)) {
+		 returnValue = "U";
+	     }
+	     else if (charCode >= "a".charCodeAt(0) && charCode <= "z".charCodeAt(0)) {
+		 returnValue = "L";
+	     }
+	     else if (charCode >= "0".charCodeAt(0) && charCode <= "9".charCodeAt(0)) {
+		 returnValue = "N";
+	     }
+	     return returnValue;
+	 }
+
+	 var s = prompt("Enter some string", "Hello World!");
+
+	 switch (checkCharType(s)) {
+	     case "U":
+		 document.write("1st char is Uppercase");
+		 break;
+	     case "L":
+		 document.write("1st char is Lowercase");
+		 break;
+	     case "N":
+		 document.write("1st char is Number");
+		 break;
+	     default:
+		 document.write("1st char is not a char or Number");
+	 }
+	</script>
+    </body>
+</html>

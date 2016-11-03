@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>Title0</title>
+    </head>
+    <body>
+	<form name="form1">
+	    <input type="checkbox" name="dvdChk" checked="checked" value="DVD" />
+	    <input type="radio" name="cpuSpeed" checked="checked" value="1 GHz" />
+	    <input type="radio" name="cpuSpeed" value="1 GHz" />
+	    <input type="radio" name="cpuSpeed" value="1 GHz" />
+	</form>
+	<script>
+	 var rdo = document.form1.cpuSpeed;
+	 console.log(rdo);
+	 console.log(rdo[0]);
+	 console.log(typeof (rdo[0]));
+	</script>
+    </body>
+</html>

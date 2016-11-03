@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>Title</title>
+
+    </head>
+    <body>
+	<form action="" name="form1">
+	    <input id="text0" type="text" value="hi there"/>
+	    <input type="password" />
+	    <br />
+	    <textarea cols="200" rows="6" name="textarea1">Hello World
+            Line 2 with pre-spaces
+	    </textarea>
+	    <br />
+	    <input type="checkbox" />
+	    <br />
+	    <input type="radio" />
+	    <input type="radio" />
+	    <br />
+	    <select>
+		<option>First</option>
+		<option>Second</option>
+	    </select>
+	    <br />
+	    <select size="4">
+		<option>First</option>
+		<option>Second</option>
+		<option>Third</option>
+		<option>Fourth</option>
+	    </select>
+	    <br />
+	    <input type="button" name="button1" value="click me baby" />
+	    <input type="submit" value="submit button" name="submit1" />
+	    <input type="reset" value="reset button" name="reset1" />
+	    <p>This is inside form1.</p>
+	</form>
+	<form action="" name="form2">
+	    <p>This is inside form2.</p>
+	</form>
+	<form action="" name="form3">
+	    <p>This is inside form3.</p>
+	</form>
+	<script>
+
+	 var numberForms = document.forms.length;
+	 for (var i = 0; i != numberForms; ++i) {
+	     //alert(document.forms[i].name);
+	 }
+	 var text00 = document.getElementById("text0");
+	 console.log(text00.form.name);
+	 console.log(["text00.type", text00.type]);
+	 text00.focus();
+	 text00.select();
+
+	 var button11 = document.form1.button1;
+	 console.log(button11.constructor.name);
+
+	 var textarea11 = document.form1.textarea1;
+	 console.log("******************");
+	 console.log(textarea11.value);
+
+
+	</script>
+    </body>
+</html>

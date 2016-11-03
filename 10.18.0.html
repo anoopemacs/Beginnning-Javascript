@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>title</title>
+
+    </head>
+    <body>
+	
+	<div draggable="true" id="mydiv">Draggable Content</div>
+	<script>
+	 function dragstart0() {
+	     console.log(["dragstart0"]);
+	 }
+	 function drag0() {
+	     console.log(["drag0"]);
+	 }
+	 function dragend0() {
+	     console.log(["dragend0"]);
+	 }
+	 var div0 = document.getElementById("mydiv");
+	 div0.addEventListener("dragstart", dragstart0);
+	 div0.addEventListener("drag", drag0);
+	 div0.addEventListener("dragend", dragend0);
+	</script>
+    </body>
+</html>

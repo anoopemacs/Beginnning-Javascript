@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>Title</title>
+    </head>
+    <body>
+	<script>
+	 var s = "JavaScript";
+	 console.log(s.substring(2, 5));
+	 
+	 // below is more useful method:
+	 console.log(s.substr(2, 5));
+
+	 var fileName = window.location.href;
+	 fileName = fileName.substr(fileName.lastIndexOf("/") + 1);
+	 //	 document.write(fileName);
+
+	 var myString = prompt("Enter some text", "Hello World!");
+	 var theLastChar = myString.charAt(myString.length - 1);
+	 document.write(theLastChar);
+	</script>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>title</title>
+    </head>
+    <body>
+	<style> #divAdvert {
+	    background-color: gray;
+	 }
+	</style>
+
+	<div id="divAdvert" style="color: green">I am an advertisement.</div>
+
+	<script>
+	 var divAdvert = document.getElementById("divAdvert");
+	 alert(divAdvert.style.backgroundColor); // empty, inaccessible
+	 alert(divAdvert.style.color); // accessible
+	 
+	</script>
+    </body>
+</html>

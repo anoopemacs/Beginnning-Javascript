@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>title</title>
+    </head>
+    <body>
+	<h1 id="heading1">My Heading</h1>
+	<p id="paragraph1">This is first paragraph</p>
+	<script>
+	 /*
+	 var pElement = document.getElementById("paragraph1");
+	 pElement.setAttribute("align", "center");
+	 alert(pElement.getAttribute("align"));
+	 pElement.removeAttribute("align");
+	 */
+
+	 /*
+	 var h1Element = document.getElementById("heading1");
+	 h1Element.style.color = "red";
+
+	 if (h1Element.nextSibling.nodeType == 1) {
+	     var pElement = h1Element.nextSibling;
+	 } else {
+	     pElement = h1Element.nextSibling.nextSibling;
+	 }
+	 pElement.style.color = "green";
+	 */
+
+	 var pElement = document.getElementById("paragraph1");
+	 var h1Element;
+	 if (pElement.previousSibling.nodeType == 1) {
+	     h1Element = pElement.previousSibling;
+	 }
+	 else {
+	     h1Element = pElement.previousSibling.previousSibling;
+	 }
+	 h1Element.style.color = "yellow";
+	</script>
+    </body>
+</html>

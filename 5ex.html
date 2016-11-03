@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>Title</title>
+    </head>
+    <body>
+	<script>
+	 //q1
+	 var date = new Date();
+	 date.setMonth(date.getMonth() + 12);
+	 document.write(date.toDateString());
+
+	 //q2
+	 var arr = [];
+	 do {
+	     var temp = prompt("Enter a name:");
+	     arr.push(temp);
+	 } while (temp != "");
+
+	 arr = arr.sort();
+	 arr.forEach(function(value, index, array) {
+	   document.write(value, "<br />");
+	 });
+
+	 //q3
+	 //Constructor
+	 function Person(firstName, lastName) {
+	     this.firstName = firstName;
+	     this.lastName = lastName;
+	 }
+	 Person.prototype.getFullName = function() {
+	     return this.firstName + " " + this.lastName;
+	 }
+	 Person.prototype.greet = function(person) {
+	     alert ("Hi " + person.getFullName() + ". You are really cute, I had to meet you. My name is " + this.getFullName());
+	 }
+	 var anoop = new Person("Anoop", "Emacs");
+	 var amrita = new Person("Amrita", "Kerala");
+	 amrita.greet(anoop);
+	</script>
+    </body>
+</html>

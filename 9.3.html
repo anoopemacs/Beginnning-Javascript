@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>9.2</title>
+    </head>
+    <body>
+	<!-- <h1 id="heading1">My heading</h1> -->
+	<!-- <p id="paragraph1">This is some text in a paragraph</p> -->
+
+	<script>
+	 var newText = document.createTextNode("My Heading");
+	 var newElem = document.createElement("h1");
+
+	 newElem.appendChild(newText);
+	 document.body.appendChild(newElem);
+
+	 newText2 = document.createTextNode("This is some text in a paragraph");
+	 newElem2 = document.createElement("p");
+	 newElem2.appendChild(newText2);
+	     
+	 document.body.appendChild(newElem2);
+	</script>
+	
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>Title</title>
+    </head>
+    <body>
+	<script>
+	 // test -> contains only letters and numbers
+	 var input = prompt("please enter a pass phrase.", "");
+	 function isValid(text) {
+	     var reg = /[^a-z\d]/i; // if matched, then invalid
+	     return !(reg.test(text));
+	 }
+	 if (isValid(input))
+	     alert("Valid :)");
+	 else
+	     alert("Your passphrase contains one or more invalid characters");
+	</script>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>Title0</title>
+    </head>
+    <body>
+	<form action="" name="form1">
+	    <textarea rows="15" cols="40" name="textarea1"></textarea>
+	    <textarea rows="15" cols="40" name="textarea2"></textarea>
+	    <br />
+	    <input type="button" value="Clear event textarea" name="button1" />
+	</form>
+
+	<script>
+	 var form11 = document.form1;
+	 var textarea11 = form11.textarea1;
+	 var textarea22 = form11.textarea2;
+	 var button11 = form11.button1;
+
+	 function clearTextarea2(e) {
+	     textarea22.value = "";
+	     console.log("inside clearTextarea2");
+	 }
+	 function displayEvent(e) {
+	     var message = textarea22.value;
+	     if (message == "change") {
+		 console.log("displayEvent......");
+	     }
+	     message = message + e.type + "\n";
+	     textarea22.value = message;
+	 }
+	 textarea11.addEventListener("change", displayEvent);
+	 textarea11.addEventListener("keydown", displayEvent);
+	 textarea11.addEventListener("keypress", displayEvent);
+	 textarea11.addEventListener("keyup", displayEvent);
+	 button11.addEventListener("click", clearTextarea2);
+
+	 textarea11.focus();
+	</script>
+    </body>
+</html>

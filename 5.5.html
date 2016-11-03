@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>Title</title>
+    </head>
+    <body>
+	<script>
+	 function fix(fixNumber, decimalPlaces) {
+	     var div = Math.pow(10, decimalPlaces);
+	     fixNumber = Math.round(fixNumber * div) / div;
+	     return fixNumber;
+	 }
+	 var f = prompt("Enter number:");
+	 var d = prompt("Enter no. of decimal places:");
+	 document.write(f + " fixed to " + d + " places = " + fix(f, d));
+	</script>
+    </body>
+</html>

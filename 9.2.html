@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>9.2</title>
+    </head>
+    <body>
+	<h1 id="heading1">My heading</h1>
+	<p id="paragraph1">This is some text in a paragraph</p>
+
+	<script>
+	 var htmlElement;
+	 var headElement;
+	 var bodyElement;
+	 var h1Element;
+	 var pElement;
+
+	 htmlElement = document.documentElement;
+	 headElement = htmlElement.firstChild;
+	 console.log("headElement.tagName", headElement.tagName);
+
+	 if (headElement.nextSibling.nodeType == 3) {
+	     bodyElement = headElement.nextSibling.nextSibling;
+	 }
+	 else {
+	     bodyElement = headElement.nextSibling;
+	 }
+	 console.log("bodyElement.tagName", bodyElement.tagName);
+
+	 if (bodyElement.firstChild.nodeType == 3) {
+	     h1Element = bodyElement.firstChild.nextSibling;
+	 }
+	 else {
+	     h1Element = bodyElement.firstChild;
+	 }
+	 console.log("h1Element.tagName", h1Element.tagName);
+
+	 if (h1Element.nextSibling.nodeType == 3) {
+	     pElement = h1Element.nextSibling.nextSibling;
+	 }
+	 else {
+	     pElement = h1Element.nextSibling;
+	 }
+	 console.log("pElement.tagName", pElement.tagName);
+
+	 if (pElement.previousSibling.nodeType == 3) {
+	     h1Element = pElement.previousSibling.previousSibling;
+	 }
+	 else {
+	     h1Element = pElement.previousSibling;
+	 }
+
+	 h1Element.style.fontFamily = "Courier";
+	 
+	</script>
+    </body>
+</html>

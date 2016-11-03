@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>Title</title>
+    </head>
+    <body>
+	<script>
+	 /*
+	 var s = "007,007,001,002,002,003,002,004";
+	 var reg = /(\d+),\1/g;
+	 s = s.replace(reg, "Error");
+	 console.log(s);
+	 */
+
+	 //split
+	 var s2 = "apple, 0.99, banana, 0.50, peach, 0.25, orange, 0.75";
+	 var reg = /[^a-z]+/i;
+	 var a2 = s2.split(reg);
+	 a2.pop();
+	 console.log(s2);
+	 console.log(a2);
+	 console.log("_________________________________________________");
+
+	 //replace
+	 var s3 = "2012, 2013, 2014";
+	 console.log(s3);
+	 var reg = /(\d{4})/g;
+	 s3 = s3.replace(reg, "the year $1");
+	 console.log(s3);
+
+	 //replace2
+	 var s4 = "He then said 'My Name is O'Connerly, yes that's right, O'Connerly'.";
+	 console.log(s4);
+	 var reg = /(\B')|('\B)/g;
+	 s4 = s4.replace(reg, '"');
+	 console.log(s4);
+
+	 //search
+	 var s5 = "Beginning JavaScript, Beginning Java 2, " + "Professional JavaScript java";
+	 console.log(s5);
+	 var reg = /\bJava\b/gi;
+//	 var temp = s5.replace(reg, "*");
+	 var i5 = s5.search(reg);
+	 console.log(i5);
+	 var i55 = s5.match(reg);
+	 console.log(i55);
+	 //console.log(temp);
+	</script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>Title</title>
+    </head>
+    <body>
+	<form action="" name="form1">
+	    <input type="text" name="myTextBox" value="Hi" size="66" maxlen="6" />
+	</form>
+	<script>
+	 var tb0 = document.form1.myTextBox;
+	 function tbtest() {
+	     console.log("bla bla bla");
+	 }
+	 //keydown keypress change select keyup
+	 tb0.addEventListener("keyup", tbtest);
+	</script>
+    </body>
+</html>

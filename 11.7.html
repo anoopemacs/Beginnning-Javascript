@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>Title0</title>
+    </head>
+    <body>
+	<form name="form1">
+	    <select name="theDay" size="5" multiple="multiple">
+		<option value="0" selected="selected">Monday</option>
+		<option value="1">Tuesday</option>
+		<option value="2">Wednesday</option>
+		<option value="3">Thursday</option>
+		<option value="4">Friday</option>
+		<option value="5">Saturday</option>
+		<option value="6">Sunday</option>
+	    </select>
+	    <br /><br />
+	    <input type="button" value="remove Tuesday" name="removeTue"/>
+	    <input type="button" value="add Tuesday0" name="addTue"/>
+	    <br />
+	</form>
+	<script>
+	 var form1 = document.form1;
+	 function removeTueClick() {
+	     var options = form1.theDay.options;
+	     if (options[1].text == "Tuesday") {
+		 options[1] = null;
+	     } else {
+		 console.log("There is no Tuesday");
+	     }
+	 }
+	 function addTueClick() {
+	     var options = form1.theDay.options;
+	     if (options[1].text != "Tuesday") {
+		 var lastOption = new Option();
+		 options[options.length] = lastOption;
+
+		 for (var i = options.length - 1; i != 0; --i) {
+		     options[i].text = options[i-1].text;
+		     options[i].value = options[i-1].value;
+		 }
+		 var newOption = new Option("Tuesday", 1);
+		 options[1] = newOption;
+	     } else {
+		 alert("Tuesday already exists man");
+	     }
+	 }
+	 form1.removeTue.addEventListener("click", removeTueClick);
+	 form1.addTue.addEventListener("click", addTueClick);
+	</script>
+    </body>
+</html>

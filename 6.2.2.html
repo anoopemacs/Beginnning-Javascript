@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>Title</title>
+    </head>
+    <body>
+	<script>
+	 var s = "Hello World!, let's look at boundaries said 007";
+	 var reg = /\b/g;
+	 s = s.replace(reg, "|");
+	 console.log(s);
+	 alert(s);
+	 //-> |Hello| |World|!, |let|'|s| |look| |at| |boundaries| |said| |007|.
+	</script>
+    </body>
+</html>

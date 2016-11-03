@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>Title0</title>
+    </head>
+    <body>
+	<form action="" name="form1">
+	    <p>Tick all components you want on your computer:</p>
+	    <p>
+		<label for="chkDVD">DVD-ROM</label>
+		<input type="checkbox" name="chkDVD" id="chkDVD" value="DVD-ROM" />
+	    </p>
+	    <p>
+		<label for="chkBluray">Blu-ray</label>
+		<input type="checkbox" name="chkBluray" id="chkBluray" value="Blu-ray" />
+	    </p>
+	    <p>Select CPU</p>
+	    <p>
+		<input type="radio" name="cpuSpeed" value="3.2 Ghz" />
+		<label>3.2 GHz</label>
+		<input type="radio" name="cpuSpeed" checked="checked" value="3.7 Ghz" />
+		<label>3.7 GHz</label>
+		<input type="radio" name="cpuSpeed" value="3.2 Ghz" />
+		<label>4.0 GHz</label>
+	    </p>
+	    <input type="button" value="Check form" name="btnCheck" />
+	</form>
+	<script>
+	 var myform = document.form1;
+	 function getSelectedSpeedValue() {
+	     var rdos = myform.cpuSpeed;
+	     for (var i = 0; i != rdos.length; ++i) {
+		 if (rdos[i].checked == true) {
+		     return rdos[i].value;
+		 }
+	     }
+	     return "";
+	 }
+	 function findIndexOfSpeed(radio) {
+	     var rdos = myform.cpuSpeed;
+	     for (var i = 0; i != rdos.length; ++i) {
+		 if (rdos[i] == radio) {
+		     return i;
+		 }
+	     }
+	     return -1;
+	 }
+	 function speedClick(e) {
+	     var i = findIndexOfSpeed(e.target);
+	     if (i == 2) {
+		 e.preventDefault();
+		 alert("Not available yet");
+	     }
+	 }
+	 function btnCheckClick() {
+	     var numberOfControls = myform.length;
+	     var cpu = "Your chosen processor speed is ";
+	     cpu += getSelectedSpeedValue();
+	     cpu += "\n With additional components like: ";
+	     for (var i = 0; i != numberOfControls; ++i) {
+		 var el = myform[i];
+		 if (el.type == "checkbox") {
+		     if (el.checked == true) {
+			 cpu = cpu + "\n" + el.value;
+		     }
+		 }
+	     }
+	     alert (cpu);
+	 }
+	 for (var i = 0; i != myform.cpuSpeed.length; ++i) {
+	     myform.cpuSpeed[i].addEventListener("click", speedClick);
+	 }
+	 myform.btnCheck.addEventListener("click", btnCheckClick);
+	</script>
+    </body>
+</html>

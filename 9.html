@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>title</title>
+    </head>
+    <body>
+	<h1 id="heading1">My Heading</h1>
+	<p id="paragraph1">This is some text in a paragraph.</p>
+	<span>Below is a table</span>
+	<table>
+	    <tr>
+		<td>Row 1 Cell 1</td>
+		<td>Row 1 Cell 2</td>
+	    </tr>
+	</table>
+	
+	<p class="sub-title">This is a <span>special</span> paragraph element that contains
+	    <span>some text</span>
+	    <span>some more text</span>
+	</p>
+
+	<script>
+	 var h1Element = document.getElementById("heading1");
+	 h1Element.style.color = "red";
+
+	 var tdElements = document.getElementsByTagName("td");
+	 console.log(tdElements);
+	 var length = tdElements.length;
+	 for (var i = 0; i != length; ++i) {
+	     tdElements[i].style.color = "red";
+	 }
+
+	 var firstSpan = document.querySelector(".sub-title span");
+	 firstSpan.style.color = "green";
+
+	 var allSpans = document.querySelectorAll(".sub-title span");
+	 for (var i = 1; i != allSpans.length; ++i) {
+	     allSpans[i].style.color = "blue";
+	 }
+	</script>
+    </body>
+</html>

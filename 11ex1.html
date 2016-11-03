@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<meta charset="utf-8" />
+	<title>2.4</title>
+    </head>
+    <body>
+	<form name="form1" id="form1">
+	    <label for="farhen">Enter temp in farhen: </label>
+	    <input type="number" value="32" name="farhenInputName"/>
+	</form>
+	<p>
+	    The converted to celsius temp is =
+	    <output form="form1" name="output1"></output>
+	</p>
+	<script>
+	 // c = 5/9 (f-32)
+	 var myForm = document.form1;
+	 var farhenInputField = myForm.farhenInputName;
+	 function reactOnChange () {
+	     var farhen = parseFloat (farhenInputField.value);
+	     /*		     console.log(farhen); */
+	     var cel = 5/9 * (farhen - 32);
+	     cel = cel.toFixed(2);
+	     var output = myForm.output1;
+	     output.value = cel;
+	 }
+	 reactOnChange();
+	 farhenInputField.addEventListener("change", reactOnChange);
+
+	</script>
+    </body>
+</html>
+

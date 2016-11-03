@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>title</title>
+    </head>
+    <body>
+        <img id="img1" src="giphy1.gif" />
+	<div id="status"></div>
+
+        <script>
+         var myImages = [
+             "giphy1.gif",
+             "giphy2.gif",
+             "giphy3.gif",
+             "giphy4.gif",
+             "giphy5.gif"
+         ];
+
+         function changeImg(e) {
+             var el = e.target;
+	     
+	     // [0, 5)
+	     var newImgNumber = Math.floor(Math.random() * 5);
+	     var newImg = myImages[newImgNumber];
+
+	     // to avoid same image reload
+	     while (el.src.indexOf(newImg) != -1) {
+		 newImgNumber = Math.floor(Math.random() * 5);
+		 newImg = myImages[newImgNumber];
+	     }
+	     el.src = newImg;
+         }
+
+	 function updateStatus(e) {
+	     var el = e.target;
+	     var status = document.getElementById("status");
+	     status.innerHTML = "The image changed to " + el.src;
+	     console.log(el);
+	     if (el.src.indexOf("4") > -1) {
+		 el.removeEventListener("click", changeImg);
+		 el.removeEventListener("click", updateStatus);
+	     }
+	     console.log("e.type", e.type);
+	     console.log("e", e);
+	     console.log("el", el);
+	 }
+	 
+         var imgObj = document.getElementById("img1");
+	 imgObj.addEventListener("click", changeImg);
+	 imgObj.addEventListener("click", updateStatus);
+		
+        </script>
+    </body>
+</html>

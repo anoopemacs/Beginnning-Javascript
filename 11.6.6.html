@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>Title0</title>
+    </head>
+    <body>
+	<form name="form1">
+	    <select name="theDay" size="5" multiple="multiple">
+		<option value="0" selected="selected">Monday</option>
+		<option value="1">Tuesday</option>
+		<option value="2">Wednesday</option>
+		<option value="3">Thursday</option>
+		<option value="4">Friday</option>
+		<option value="5">Saturday</option>
+		<option value="6">Sunday</option>
+	    </select>
+	</form>
+	<select name="theDay" size="1">
+	    <option value="0" selected="selected">Monday</option>
+	    <option value="1">Tuesday</option>
+	    <option value="2">Wednesday</option>
+	    <option value="3">Thursday</option>
+	    <option value="4">Friday</option>
+	    <option value="5">Saturday</option>
+	    <option value="6">Sunday</option>
+	</select>
+	<script>
+	 var daySelect = document.form1.theDay;
+	 document.write("There are " + daySelect.length + " options");
+	 for (var i = 0; i != daySelect.options.length; ++i) {
+	     document.write("Option = " + daySelect.options[i].text);
+	     document.write(" |  Value = " + daySelect.options[i].value);
+	     document.write("<hr />");
+	 }
+	</script>
+    </body>
+</html>

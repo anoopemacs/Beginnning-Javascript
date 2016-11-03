@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>Chapter 9, example 5</title>
+    </head>
+    <body>
+	<div id="divAdvert">
+	    Here is an advertisement.
+	</div>
+
+	<script>
+	 alert("wait alert");
+	 
+	 var table0 = document.createElement("table");
+	 var tablerow1 = document.createElement("tr");
+	 var tablerow2 = document.createElement("tr");
+	 var tablerow3 = document.createElement("tr");
+
+	 var tabledata1 = document.createElement("td"); 
+	 var tabledata2 = document.createElement("td"); 
+	 var tabledata3 = document.createElement("td"); 
+	 var tabledata4 = document.createElement("td"); 
+	 var tabledata5 = document.createElement("td"); 
+	 var tabledata6 = document.createElement("td"); 
+	 var tabledata7 = document.createElement("td"); 
+	 var tabledata8 = document.createElement("td"); 
+	 var tabledata9 = document.createElement("td");
+
+	 var text1 = document.createTextNode("Car");
+	 var text2 = document.createTextNode("Top Speed");
+	 var text3 = document.createTextNode("Price");
+	 var text4 = document.createTextNode("Chevrolet");
+	 var text5 = document.createTextNode("120mph");
+	 var text6 = document.createTextNode("$10,000");
+	 var text7 = document.createTextNode("Pontiac");
+	 var text8 = document.createTextNode("140mph");
+	 var text9 = document.createTextNode("$20,000");
+
+	 tabledata1.appendChild(text1);
+	 tabledata2.appendChild(text2);
+	 tabledata3.appendChild(text3);
+	 tabledata4.appendChild(text4);
+	 tabledata5.appendChild(text5);
+	 tabledata6.appendChild(text6);
+	 tabledata7.appendChild(text7);
+	 tabledata8.appendChild(text8);
+	 tabledata9.appendChild(text9);
+
+	 tablerow1.appendChild(tabledata1);
+	 tablerow1.appendChild(tabledata2);
+	 tablerow1.appendChild(tabledata3);
+	 tablerow2.appendChild(tabledata4);
+	 tablerow2.appendChild(tabledata5);
+	 tablerow2.appendChild(tabledata6);
+	 tablerow3.appendChild(tabledata7);
+	 tablerow3.appendChild(tabledata8);
+	 tablerow3.appendChild(tabledata9);
+
+	 table0.appendChild(tablerow1);
+	 table0.appendChild(tablerow2);
+	 table0.appendChild(tablerow3);
+
+	 document.body.appendChild(table0);
+	</script>
+    </body>
+</html>

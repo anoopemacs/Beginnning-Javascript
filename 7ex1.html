@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>7 ex 1</title>
+    </head>
+    <body>
+	<div id="output"></div>
+	<script>
+	 var d = prompt("Enter you date of birth");
+	 var m = prompt("Enter your month of birth, eg: Jan = 0");
+	 var y = prompt("Enter your year of birth");
+	 var doj = new Date();
+	 doj.setFullYear(y);
+	 doj.setMonth(m);
+	 doj.setDate(d);
+	 var dayA = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+	 console.log(doj);
+	 document.write("You were born on " + dayA[doj.getDay()]);
+	</script>
+    </body>
+</html>

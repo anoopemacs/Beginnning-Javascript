@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>Title</title>
+    </head>
+    <body>
+	<script>
+	 var s1 = "a dog walked in off a street and ordered a finest beer";
+	 var reg = /\ba\b/g;
+	 var s11 = s1.replace(reg, "the");
+	 console.log(s1);
+	 console.log(s11);
+	 
+	 var s2 = "the dog walked in off the street and ordered the finest beer";
+	 console.log(s11 == s2);
+	</script>
+    </body>
+</html>

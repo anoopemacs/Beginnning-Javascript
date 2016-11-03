@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>Title</title>
+    </head>
+    <body>
+	<script>
+	 var myShopping = ["Eggs", "Milk", "Potatoes", "Cereal", "Banana"];
+	 var select = prompt("Enter 1 for alphabetical, -1 for reverse-alphabetical sort:");
+	 myShoppingSorted = myShopping.sort();
+	 if (select == 1)
+	     document.write(myShoppingSorted.join("<br />"));
+	 else if (select == -1){
+	     myShoppingSortedReverse = myShoppingSorted.reverse();
+	     document.write(myShoppingSortedReverse.join("<br />"));
+	 }
+	 else {
+	     document.write("Invalid input");
+	 }
+	</script>
+    </body>
+</html>

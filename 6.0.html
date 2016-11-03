@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>Title</title>
+    </head>
+    <body>
+	<script>
+	 /*
+	 var s = "A,B,C";
+	 var a = s.split(",");
+	 document.write(a[2]);
+	 */
+
+	 //reverse
+	 var values = prompt("Please enter a set of fruits to reverse:", "Apples,Oranges,Bananas");
+	 function splitAndReverse(csv) {
+	     var parts = csv.split(",");
+	     parts.reverse();
+	     var reversedString = parts.join(",");
+	     alert(reversedString);
+	 }
+	 //	 splitAndReverse(values);
+
+	 //replace
+	 var s2 = "The event will be in May, the 21st of June";
+	 var s22 = s2.replace("May", "June");
+	 console.log(s22);
+
+	 //search
+	 var s3 = "Beginning Javascript, 5th edition, Learning Javascript is easier than learning Java";
+	 console.log("\'Java was found at: ", s3.search("Java"));
+
+	 //match
+	 console.log("match \'Javascript on s3: ", s3.match("Javascript"));
+	 
+	</script>
+    </body>
+</html>

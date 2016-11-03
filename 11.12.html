@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>Title0</title>
+    </head>
+    <body>
+	<h2>Highway speed tracking</h2>
+	<form id="form1" name="form1">
+	    <p>
+		<label for="driverName">Driver Name: </label>
+		<input type="text" id="driverName" name="driverName" />
+	    </p>
+	    <p>
+		<label for="speed">Speed (in mph): </label>
+		<input type="number" id="speed" name="speed" />
+		<!-- 'id and 'name can be used as same -->
+		<meter id="speedMeter" value="0" low="55" optimum="75" high="90" max="120"></meter>
+	    </p>
+	    <p>
+		<label for="vehicle">Vehicle Type: </label>
+		<input type="text" id="vehicle" name="vehicle" />
+	    </p>
+	</form>
+	<p>
+	    Form completion progress:
+	    <progress id="completionProgress" max="3" value="0"></progress>
+	</p>
+	
+	<input type="button" value="valueOfButton" />
+	
+	<script>
+	 var myForm = document.form1;
+	 var completionProgress = document.getElementById("completionProgress");
+	 var speedMeter = document.getElementById("speedMeter");
+	 console.log(myForm);
+
+	 function countFilledData() {
+	     var count = 0;
+	     for (var i = 0; i != myForm.length; ++i) {
+		 var element = myForm[i];
+		 if (element.value) {
+		     ++count;
+		 }
+	     }
+	     return count;
+	 }
+	 function onFormChange() {
+	     completionProgress.value = countFilledData();
+	     speedMeter.value = myForm.speed.value;
+	 }
+	 myForm.addEventListener("change", onFormChange);
+	</script>
+    </body>
+</html>

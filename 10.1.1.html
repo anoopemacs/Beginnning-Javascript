@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>title</title>
+    </head>
+    <body>
+	<h1 onclick="handle(event)">Heading1</h1>
+	<p ondblclick="handle(event)">do things to me</p>
+	<span onmouseover="handle(event)">Special text</span>
+	<script>
+	 function handle(e) {
+	     console.log(e.type);
+	 }
+	</script>
+    </body>
+</html>
